@@ -488,7 +488,7 @@ class ReactPhoneInput extends React.Component {
       "arrow": true,
       "up": this.state.showDropDown
     });
-    let inputClasses = classNames({
+    let inputClasses = classNames(this.props.inputClassNames, {
       "form-control": true,
       "invalid-number": !this.props.isValid(this.state.formattedNumber.replace(/\D/g, ''))
     });
@@ -589,7 +589,8 @@ ReactPhoneInput.propTypes = {
     onBlur: PropTypes.func,
     onFocus: PropTypes.func,
     onClick: PropTypes.func,
-    onKeyDown: PropTypes.func
+    onKeyDown: PropTypes.func,
+    inputClassNames: PropTypes.string
 };
 
 export default ReactPhoneInput;
